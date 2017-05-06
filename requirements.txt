@@ -1,0 +1,16 @@
+Flask
+Flask-OAuth
+Flask-Cache
+Flask-SQLAlchemy
+Flask-Principal
+Flask-WTF
+Flask-Mail
+Flask-Script
+Flask-Babel
+Flask-Themes
+Flask-Uploads
+pygments
+markdown
+blinker
+pymysql
+simplejson
