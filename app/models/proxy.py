@@ -12,7 +12,7 @@ from sqlalchemy import Integer
 from sqlalchemy import Numeric
 from sqlalchemy import VARCHAR
 
-from proxyapi.extensions import db
+from app.extensions import db
 
 
 class ProxyQuery(BaseQuery):

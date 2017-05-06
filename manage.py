@@ -8,8 +8,8 @@ from flask_script import Server
 from flask_script import Shell
 from flask_script import prompt_bool
 
-from proxyapi import create_app
-from proxyapi.extensions import db
+from app import create_app
+from app.extensions import db
 
 manager = Manager(create_app('config.cfg'))
 

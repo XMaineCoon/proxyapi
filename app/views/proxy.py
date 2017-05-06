@@ -9,14 +9,14 @@ from logging import getLogger
 from flask import Blueprint, jsonify
 from flask import request
 
-from proxyapi.models.proxy import Proxy
+from app.models.proxy import Proxy
 
 proxy = Blueprint('proxy', __name__)
 
 
 @proxy.route("/list/<int:page>", methods=["GET"])
 def proxy_list(page):
-    getLogger("proxyapi").info("request ip => %s" % request.remote_addr)
+    getLogger("app").info("request ip => %s" % request.remote_addr)
     proxy_list = Proxy.query.find_by_page(page)
     if len(proxy_list) == 0:
         return jsonify(code=404, codeMsg="no result")

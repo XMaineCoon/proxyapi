@@ -10,10 +10,10 @@ from logging.handlers import RotatingFileHandler
 from flask import Flask, jsonify
 from flask import logging
 
-from proxyapi.extensions import db
-from proxyapi.views.proxy import proxy
+from app.extensions import db
+from app.views.proxy import proxy
 
-DEFAULT_APP_NAME = 'proxyapi'
+DEFAULT_APP_NAME = 'app'
 
 DEFAULT_BLUEPRINTS = (
     (proxy, "/proxy"),
@@ -58,7 +58,7 @@ def configure_errorhandlers(app):
 
     @app.errorhandler(500)
     def server_error(error):
-        getLogger("proxyapi").exception(error)
+        getLogger("app").exception(error)
         return jsonify(error='Sorry, an errors has occurred')
 
 
