@@ -16,7 +16,7 @@ proxy = Blueprint('proxy', __name__)
 
 @proxy.route("/list/<int:page>", methods=["GET"])
 def proxy_list(page):
-    getLogger("app").info("request ip => %s" % request.remote_addr)
+    getLogger("proxyapi").info("request ip => %s" % request.remote_addr)
     proxy_list = Proxy.query.find_by_page(page)
     if len(proxy_list) == 0:
         return jsonify(code=404, codeMsg="no result")

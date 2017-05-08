@@ -11,7 +11,9 @@ from flask_script import prompt_bool
 from app import create_app
 from app.extensions import db
 
-manager = Manager(create_app('config.cfg'))
+app = create_app('config.cfg')
+
+manager = Manager(app)
 
 manager.add_command("runserver", Server('0.0.0.0', port=8080))
 

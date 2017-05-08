@@ -11,12 +11,12 @@ from flask import Flask, jsonify
 from flask import logging
 
 from app.extensions import db
-from app.views.proxy import proxy
+from app.views import proxy as views
 
-DEFAULT_APP_NAME = 'app'
+DEFAULT_APP_NAME = 'proxyapi'
 
 DEFAULT_BLUEPRINTS = (
-    (proxy, "/proxy"),
+    (views.proxy, "/proxy"),
 )
 
 
